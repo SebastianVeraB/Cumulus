@@ -1,0 +1,81 @@
+<aura:component>
+  <aura:attribute name="isOpen" type="Boolean" default="false" /> <!--Adds open in animation-->
+  <aura:attribute name="name" type="String" default="" />
+  <aura:attribute name="isNew" type="Boolean" default="false" /> <!--Adds drop in animation-->
+  <aura:attribute name="isVisible" type="Boolean" default="true" />
+  <aura:attribute name="isDeleted" type="Boolean" default="false" /> <!--Adds deletion animation-->
+  <aura:attribute name="aBody" type="String" default="" />
+
+<!--############# CARD CONFIGURATION ############-->
+  <div aura:id="card">
+    <div style="margin-top: 0; margin-bottom: 16px;"
+      class="{! v.isVisible ? ( v.isNew ? 'nima-showup slds-welcome-mat__tile': 'slds-welcome-mat__tile'): 'slds-hide'}">
+      <div onclick="{!c.handleOpenClose}"
+        style="box-shadow: 0px 2px 2px 0px #cccccc;"
+        class="slds-box slds-media cardHover">
+
+<!--############# ICON ###############-->
+        <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+          <div class="slds-welcome-mat__tile-figure">
+            <div class="slds-welcome-mat__tile-icon-container">
+              <span class="slds-icon_container">
+                <lightning:icon iconName="utility:salesforce1" />
+              </span>
+            </div>
+          </div>
+        </div>
+
+<!--############### START MAIN BODY OF THE CARD ###########-->
+      <div class="slds-media__body">
+          <div class="slds-welcome-mat__tile-body" style="padding-right: 0em;">
+      
+            <lightning:layout>
+              <lightning:layoutItem padding="horizontal-small"  size="3">
+
+                    <p class="slds-welcome-mat__tile-description">
+                      Notification Number
+                    </p>
+                    <h3 class="slds-welcome-mat__tile-title">
+                      {!v.name}
+                    </h3>
+
+              </lightning:layoutItem>
+              <lightning:layoutItem padding="horizontal-small"  size="2" alignmentBump="left">
+
+                <div style="position:relative; transform: scale(0.8); top: 10%; left: calc(100% - 7vh);">
+                    
+                  <lightning:buttonIcon 
+                    alternativeText ='' 
+                    iconName="utility:delete" 
+                    variant="bare" 
+                    size="large" 
+                    onclick="{! c.delete }" 
+                  />
+
+                </div>
+
+              </lightning:layoutItem>
+            </lightning:layout>
+         
+          </div>
+        </div>
+      </div>
+  <!--############### ENDS MAIN BODY OF THE CARD ###########-->
+
+ <!--######### HIDDEN BODY #########-->
+      <div aura:id="hideDiv" class="preventOverflow">
+        <div aura:id="showSection" style="border-color: rgb(228, 228, 228); transition: margin-top 0.5s ease;"
+          class="{! v.isOpen ? 'slds-box oktanaShow' : 'slds-box oktanaHide'}">
+
+          <lightning:layout verticalAlign="center">
+            <lightning:layoutItem flexibility="no-flex" padding="horizontal-small">
+              <p class="slds-welcome-mat__tile-description">{!v.aBody}</p>
+            </lightning:layoutItem>
+          </lightning:layout>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</aura:component>
