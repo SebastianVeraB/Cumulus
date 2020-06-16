@@ -9,7 +9,7 @@
 <!--############# CARD CONFIGURATION ############-->
   <div aura:id="card">
     <div style="margin-top: 0; margin-bottom: 16px;"
-      class="{! v.isVisible ? ( v.isNew ? 'nima-showup slds-welcome-mat__tile': 'slds-welcome-mat__tile'): 'slds-hide'}">
+      class="{! v.isVisible ? ( v.isNew ? 'oktana-showup slds-welcome-mat__tile': 'slds-welcome-mat__tile'): 'slds-hide'}">
       <div onclick="{!c.handleOpenClose}"
         style="box-shadow: 0px 2px 2px 0px #cccccc;"
         class="slds-box slds-media cardHover">

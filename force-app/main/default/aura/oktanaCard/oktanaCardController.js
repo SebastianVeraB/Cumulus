@@ -1,12 +1,17 @@
 ({
     handleOpenClose : function(component, event, helper) {
+        console.log('called open')
         if(! component.get("v.isDeleted")) {
+          
             if(component.get("v.isOpen")) {
-                component.set("v.isOpen", true);
+               
+                component.set("v.isOpen", false);
+             
             }
             else
             {
-                component.set("v.isOpen", false);
+                console.log('else')
+                component.set("v.isOpen", true);
             }
         }
     },
@@ -14,7 +19,7 @@
     delete : function( component,event,helper ) {
 
         component.set("v.isDeleted", true);
-        helper.close(component);
+        component.set("v.isOpen", false);
 
         let oktanaCard = component.find("card");
 
