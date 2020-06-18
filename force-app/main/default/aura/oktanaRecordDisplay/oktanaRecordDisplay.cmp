@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable">
+
+
+    <lightning:tabset selectedTabId="two">
+        <lightning:tab label="Item One" id="one">
+            <div  class="slds-p-around_medium">
+            <lightning:recordForm
+                recordId="0011D00000hI3DHQA0"
+                objectApiName="Account"
+                layoutType="Full"
+                columns="2"
+                mode="view" 
+               />
+            </div>
+        </lightning:tab>
+        <lightning:tab label="Item Two" id="two">
+            Two Content !
+        </lightning:tab>
+        <lightning:tab label="Item Three" id="three">
+            Three Content !
+        </lightning:tab>
+    </lightning:tabset>
+
+
+</aura:component>	
