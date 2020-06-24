@@ -30,5 +30,13 @@
         }, 500);
 
     },
+    handleSlide : function( component ) {
+        component.set("v.isActionsDisplayed", !component.get("v.isActionsDisplayed"));
+    },
+
+    handleSelect : function ( component ) {
+        component.set("v.isSelected", !component.get("v.isSelected"));
+    },
+
     
 })

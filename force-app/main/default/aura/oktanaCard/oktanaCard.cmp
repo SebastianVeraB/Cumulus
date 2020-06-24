@@ -1,10 +1,27 @@
 <aura:component>
-  <aura:attribute name="isOpen" type="Boolean" default="false" /> <!--Adds open in animation-->
-  <aura:attribute name="name" type="String" default="" />
-  <aura:attribute name="isNew" type="Boolean" default="false" /> <!--Adds drop in animation-->
-  <aura:attribute name="isVisible" type="Boolean" default="true" />
-  <aura:attribute name="isDeleted" type="Boolean" default="false" /> <!--Adds deletion animation-->
-  <aura:attribute name="aBody" type="String" default="" />
+
+<!--Interface-->
+  
+  <aura:attribute name="isOpen" type="Boolean" default="false" access="global"/> <!--Adds open in animation-->
+  <aura:attribute name="isNew" type="Boolean" default="false" access="global"/> <!--Adds drop in animation-->
+  <aura:attribute name="isDeletable" type="String" default="true" access="global"/>
+  <aura:attribute name="isDeleted" type="Boolean" default="false" access="global"/> <!--Adds deletion animation-->
+  <aura:attribute name="isSelectable" type="Boolean" default="false" access="global" />
+
+
+  <aura:attribute name="title" type="String" default="" access="global"/>
+  <aura:attribute name="titleLabel" type="String" default="" access="global"/>
+  <aura:attribute name="titleSize" type="String" default="2" access="global"/>
+
+  <aura:attribute name="dropableBody" type="String" default="" access="global"/>
+  <aura:attribute name="actions" type="Aura.Component[]" default="" access="global"/>
+<!--Interface-->
+
+  <aura:attribute name="isVisible" type="Boolean" default="true" access="private"/>
+  <aura:attribute name="isActionsDisplayed" type="Boolean" default="false" access="private"/>
+  <aura:attribute name="options" type="List" default="[{'label': '', 'value': 'option1'}]" access="private"/>
+  <aura:attribute name="value" type="List" default="option2" access="private"/>
+
 
 <!--############# CARD CONFIGURATION ############-->
   <div aura:id="card">
@@ -15,6 +32,7 @@
         class="slds-box slds-media cardHover">
 
 <!--############# ICON ###############-->
+
         <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
           <div class="slds-welcome-mat__tile-figure">
             <div class="slds-welcome-mat__tile-icon-container">
@@ -29,33 +47,108 @@
       <div class="slds-media__body">
           <div class="slds-welcome-mat__tile-body" style="padding-right: 0em;">
       
-            <lightning:layout>
-              <lightning:layoutItem padding="horizontal-small"  size="3">
+            <lightning:layoutItem padding="horizontal-small"  size="{!v.titleSize}">
+              <p class="slds-welcome-mat__tile-description">
+                {!v.titleLabel}
+              </p>
+              <h3 class="slds-welcome-mat__tile-title">
+                {!v.title}
+              </h3>
+            </lightning:layoutItem>
 
-                    <p class="slds-welcome-mat__tile-description">
-                      Notification Number
-                    </p>
-                    <h3 class="slds-welcome-mat__tile-title">
-                      {!v.name}
-                    </h3>
 
-              </lightning:layoutItem>
-              <lightning:layoutItem padding="horizontal-small"  size="2" alignmentBump="left">
+            <aura:if isTrue="{! and( v.actions.length > 0, v.isDeletable)}">
+              
+              
 
-                <div style="position:relative; transform: scale(0.8); top: 10%; left: calc(100% - 7vh);">
-                    
-                  <lightning:buttonIcon 
-                    alternativeText ='' 
-                    iconName="utility:delete" 
-                    variant="bare" 
-                    size="large" 
-                    onclick="{! c.delete }" 
-                  />
+              <div class="preventOverflowX">
+                <div style="transition: margin-left 0.5s ease;" class="{! v.isActionsDisplayed ? 'slideLeft' : 'slideBack'}">
+                <lightning:layout> 
+                  <lightning:layoutItem padding="horizontal-small">
+                    <lightning:buttonIcon iconName="utility:chevronleft" variant="bare" onclick="{! c.handleSlide }" alternativeText="Settings" title="Settings" />
+    
+                </lightning:layoutItem>
+                  <lightning:layoutItem>
+                    {!v.actions}
+                  </lightning:layoutItem>
+                  <lightning:layoutItem padding="horizontal-small"  alignmentBump="left">
+                        <aura:if isTrue="{!v.isDeletable}">
+                     
+                            <div style="transform: scale(0.8);"> <!-- top: 10%; left: calc(100% - 7vh);-->
+                                
+                              <lightning:buttonIcon 
+                                alternativeText ='' 
+                                iconName="utility:delete" 
+                                variant="bare" 
+                                size="large" 
+                                onclick="{! c.delete }" 
+                              />
+            
+                            </div>
+                         
+                      </aura:if>
+    
+                    </lightning:layoutItem>
+                </lightning:layout>
+              </div>
+              </div>
+              <aura:set attribute="else">
+                <lightning:layout>
+                  <lightning:layoutItem padding="horizontal-small"  size="{!v.titleSize}">
+    
+                        <p class="slds-welcome-mat__tile-description">
+                          {!v.titleLabel}
+                        </p>
+                        <h3 class="slds-welcome-mat__tile-title">
+                          {!v.title}
+                        </h3>
+    
+                  </lightning:layoutItem>
+    
+                    <lightning:layoutItem padding="horizontal-small"  alignmentBump="left">
+                        <aura:if isTrue="{! and( v.actions.length == 0, v.isDeletable)}">
+                        <lightning:layoutItem padding="horizontal-small">
+                        
+                            <div style="transform: scale(0.8);"> <!-- top: 10%; left: calc(100% - 7vh);-->
+                                
+                              <lightning:buttonIcon 
+                                alternativeText ='' 
+                                iconName="utility:delete" 
+                                variant="bare" 
+                                size="large" 
+                                onclick="{! c.delete }" 
+                              />
+            
+                            </div>
+                         
+                        </lightning:layoutItem>
+                        <aura:set attribute="else">
+                          <aura:if isTrue="{!v.isSelectable}">
+                            <lightning:checkboxGroup style="transform: scale(1.2)" name="Checkbox Group"
+                            label=""
+                            options="{! v.options }"
+                            value="{! v.value }"
+                            onchange="{! c.handleSelect }"/>
+                            <aura:set attribute="else">
+                              <lightning:layoutItem>
+                            {!v.actions}
+                          </lightning:layoutItem>
+                            </aura:set>
+                          </aura:if>
+                          
+                        </aura:set>
+                      </aura:if>
+    
+                    </lightning:layoutItem>
+                 
+                   
+                 
+                 
+                </lightning:layout>
+              </aura:set>
+            </aura:if>
 
-                </div>
-
-              </lightning:layoutItem>
-            </lightning:layout>
+        
          
           </div>
         </div>
@@ -63,13 +156,13 @@
   <!--############### ENDS MAIN BODY OF THE CARD ###########-->
 
  <!--######### HIDDEN BODY #########-->
-      <div aura:id="hideDiv" class="preventOverflow">
+      <div aura:id="hideDiv" class="preventOverflowY">
         <div aura:id="showSection" style="border-color: rgb(228, 228, 228); transition: margin-top 0.5s ease;"
           class="{! v.isOpen ? 'slds-box oktanaShow' : 'slds-box oktanaHide'}">
 
           <lightning:layout verticalAlign="center">
             <lightning:layoutItem flexibility="no-flex" padding="horizontal-small">
-              <p class="slds-welcome-mat__tile-description">{!v.aBody}</p>
+              <p class="slds-welcome-mat__tile-description">{!v.dropableBody}</p>
             </lightning:layoutItem>
           </lightning:layout>
 

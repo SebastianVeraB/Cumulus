@@ -1,6 +1,17 @@
-.THIS .preventOverflow {
+.THIS .preventOverflowY {
     overflow-y: hidden;
 }
+.THIS .preventOverflowX{
+    overflow-x: hidden;
+}
+.THIS .slideLeft{
+    margin-left: -2em;
+}
+
+.THIS .slideBack{
+    margin-left: 8em;
+}
+
 .THIS .oktanaShow {
     margin-top: 0%;
 }
