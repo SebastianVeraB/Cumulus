@@ -14,7 +14,7 @@
 
 
 
-        <c:oktanaCard isNew='false' titleLabel='Notification Number' title='100056799'
+        <c:oktanaCard isNew='false' titleLabel='Notification' title='100056799'
             dropableBody='PM . Pump water leak . T-100-1. Normal . 05.06.2020'>
             <aura:set attribute='actions'>
                 <lightning:button variant="brand" label="Test" title="Test" onclick="{! c.foo }" />

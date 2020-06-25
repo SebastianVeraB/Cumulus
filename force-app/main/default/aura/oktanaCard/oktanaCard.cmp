@@ -77,7 +77,7 @@
                                             <!--SLIDING Arrow BUTTON-->
                                             <lightning:layoutItem class="{! v.isActionsDisplayed ? 'slideLeft' : 'slideBack'}">
                                               <div>
-                                                <lightning:layout horizontalAlign="center" verticalAlign="start" multipleRows="false" pullToBoundary="small">
+                                                <lightning:layout horizontalAlign="end" verticalAlign="start" multipleRows="false" pullToBoundary="small">
                                                   <lightning:layoutItem>
                                                     <lightning:buttonIcon 
                                                         iconName="utility:chevronleft" 
