@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable">
+
+<c:oktanaExpandableSection hasBox = 'true' title='you have 3 new notifications'>
+<c:oktanaCard isNew='false' name='100056799' aBody = 'PM . Pump water leak . T-100-1. Normal . 05.06.2020'/>
+<c:oktanaCard isNew='false' name='100056799' aBody = 'PM . Pump water leak . T-100-1. Normal . 05.06.2020'/>
+<c:oktanaCard isNew='false' name='100056799' aBody = 'PM . Pump water leak . T-100-1. Normal . 05.06.2020'/>
+</c:oktanaExpandableSection>
+    <c:oktanaExpandableSection hasBox = 'true' title='you have 5 new Orders'>
+        <c:oktanaCard isNew='false' name='400020012' aBody = 'PM . Pump water leak . T-100-1. Normal . 05.06.2020'/>
+        <c:oktanaCard isNew='false' name='400020012' aBody = 'PM . Pump water leak . T-100-1. Normal . 05.06.2020'/>
+        <c:oktanaCard isNew='false' name='400020012' aBody = 'PM . Pump water leak . T-100-1. Normal . 05.06.2020'/>
+    </c:oktanaExpandableSection>
+
+</aura:component>
