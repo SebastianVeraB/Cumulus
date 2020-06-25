@@ -2,10 +2,10 @@
 
 <!--Interface-->
   
-  <aura:attribute name="isOpen" type="Boolean" default="false" access="global"/> <!--Adds open in animation-->
-  <aura:attribute name="isNew" type="Boolean" default="false" access="global"/> <!--Adds drop in animation-->
+  <aura:attribute name="isOpen" type="Boolean" default="false" access="global" description="Adds open in animation"/> 
+  <aura:attribute name="isNew" type="Boolean" default="false" access="global" description="Adds drop in animation"/> 
   <aura:attribute name="isDeletable" type="String" default="true" access="global"/>
-  <aura:attribute name="isDeleted" type="Boolean" default="false" access="global"/> <!--Adds deletion animation-->
+  <aura:attribute name="isDeleted" type="Boolean" default="false" access="global" description="Adds deletion animation"/> 
   <aura:attribute name="isSelectable" type="Boolean" default="false" access="global" />
 
   <aura:attribute name="title" type="String" default="" access="global"/>

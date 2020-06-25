@@ -6,7 +6,7 @@
 }
 .THIS .slideLeft{
     transition: margin-left 0.5s ease;
-    margin-left: 0%;
+    margin-left: -3vw;
 }
 
 .THIS .slideBack{
@@ -27,11 +27,13 @@
 .THIS .rotateOut{
     transition: transform 0.5s ease;
     transform: rotate(180deg);
+    box-shadow: none;
 }
 
 .THIS .rotateIn{
     transition: transform 0.5s ease;
     transform: rotate(0deg);
+    box-shadow: none;
 }
 
 .THIS .oktanaShow {
