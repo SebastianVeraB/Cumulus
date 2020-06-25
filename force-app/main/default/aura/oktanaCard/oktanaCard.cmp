@@ -14,7 +14,7 @@
   <aura:attribute name="titleSize" type="String" default="2" access="global"/>
 
   <aura:attribute name="dropableBody" type="String" default="" access="global"/>
-  <aura:attribute name="actions" type="Aura.Component[]" default="" access="global"/>
+  <aura:attribute name="actions" type="Aura.Component[]" default="" access="global"/> 
 <!--Interface-->
 
   <aura:attribute name="isVisible" type="Boolean" default="true" access="private"/>
