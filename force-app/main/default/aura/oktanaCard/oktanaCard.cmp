@@ -75,10 +75,10 @@
                                         
                                             
                                             <!--SLIDING Arrow BUTTON-->
-                                            <lightning:layoutItem class="{! v.isActionsDisplayed ? 'slideLeft' : 'slideBack'}">
+                                            <lightning:layoutItem class="{! v.isActionsDisplayed ? 'slideLeft' : 'slideBack'}" flexibility="auto">
                                               <div>
-                                                <lightning:layout horizontalAlign="end" verticalAlign="start" multipleRows="false" pullToBoundary="small">
-                                                  <lightning:layoutItem>
+                                                <lightning:layout>
+                                                  <lightning:layoutItem flexibility="grow">
                                                     <lightning:buttonIcon 
                                                         iconName="utility:chevronleft" 
                                                         variant="bare" 
