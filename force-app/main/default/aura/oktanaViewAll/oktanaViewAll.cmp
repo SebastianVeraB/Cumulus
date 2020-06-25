@@ -1,0 +1,18 @@
+<aura:component>
+
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="title" type="String" default="View all" access="global" />
+    <aura:attribute name="viewingAll" type="Boolean" default="false" />
+
+    <!-- EVENTS -->
+    <aura:registerEvent name="viewAllEvent" type="c:ViewAllEvent" />
+
+    <!-- BODY -->
+    <lightning:layout horizontalAlign="center" verticalAlign="start" multipleRows="false" pullToBoundary="small">
+        <lightning:layoutItem>
+            <button class="slds-button slds-button_neutral" onclick='{! c.handleViewAll}'>{! v.title}</button>
+        </lightning:layoutItem>
+    </lightning:layout>
+
+
+</aura:component>

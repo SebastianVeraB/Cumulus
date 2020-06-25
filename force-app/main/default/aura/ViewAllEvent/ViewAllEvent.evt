@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="View all cards of a container">
+    <aura:attribute name="viewAll" type="Boolean" />
+</aura:event>
