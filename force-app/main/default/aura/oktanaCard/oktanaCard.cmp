@@ -1,6 +1,6 @@
 <aura:component>
 
-<!--Interface-->
+<!--Interface   add id and type-->
   
   <aura:attribute name="isOpen" type="Boolean" default="false" access="global"/> <!--Adds open in animation-->
   <aura:attribute name="isNew" type="Boolean" default="false" access="global"/> <!--Adds drop in animation-->
@@ -89,11 +89,13 @@
                                                         aura:id="chevron"
                                                   />
                                                   </lightning:layoutItem>
+
                                                   <lightning:layoutItem>
                                                     <div style="padding-left: 1em;">
                                                       {! v.actions }
                                                   </div>
                                                   </lightning:layoutItem>
+
                                                 </lightning:layout>
                                                   
 
