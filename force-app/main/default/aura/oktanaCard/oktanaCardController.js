@@ -30,8 +30,10 @@
         }, 500);
 
     },
-    handleSlide : function( component ) {
+    handleSlide : function( component, event) {
         component.set("v.isActionsDisplayed", !component.get("v.isActionsDisplayed"));
+        event.stopPropagation();
+        component.find("chevron").blur();
     },
 
     handleSelect : function ( component ) {
