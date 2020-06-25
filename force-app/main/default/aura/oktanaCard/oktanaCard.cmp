@@ -8,7 +8,6 @@
   <aura:attribute name="isDeleted" type="Boolean" default="false" access="global"/> <!--Adds deletion animation-->
   <aura:attribute name="isSelectable" type="Boolean" default="false" access="global" />
 
-
   <aura:attribute name="title" type="String" default="" access="global"/>
   <aura:attribute name="titleLabel" type="String" default="" access="global"/>
   <aura:attribute name="titleSize" type="String" default="2" access="global"/>

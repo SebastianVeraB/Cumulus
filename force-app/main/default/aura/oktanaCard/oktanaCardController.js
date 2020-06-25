@@ -33,6 +33,7 @@
     handleSlide : function( component, event) {
         component.set("v.isActionsDisplayed", !component.get("v.isActionsDisplayed"));
         event.stopPropagation();
+        event.preventDefault();
         component.find("chevron").blur();
     },
 
