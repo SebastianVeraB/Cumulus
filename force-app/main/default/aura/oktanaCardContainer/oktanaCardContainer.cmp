@@ -1,0 +1,25 @@
+<aura:component>
+
+    <aura:attribute name="title" type="String" default="" access="global" />
+    <aura:attribute name="items" type="List" access="global" />
+    <aura:attribute name="viewAll" type="Boolean" default="false" access="global" />
+
+    <aura:handler name='init' value='{!this}' action='{!c.doInit}' />
+
+    <lightning:layout>
+        <lightning:layoutItem>
+            <p>You have {! v.title}</p>
+            <aura:iteration items="{!v.items}" var="item">
+
+                <c:oktanaCard isNew='{! item.isNew}' titleLabel='{! item.titleLabel}' title='{! item.title}'
+                    dropableBody='{! item.dropableBody}' isDeletable='{! item.isDeletable}' />
+
+            </aura:iteration>
+        </lightning:layoutItem>
+    </lightning:layout>
+
+
+
+
+
+</aura:component>
