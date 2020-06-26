@@ -8,13 +8,24 @@
 
     <lightning:layout>
         <lightning:layoutItem>
-            <p>You have {! v.title}</p>
-            <aura:iteration items="{!v.items}" var="item">
-
-                <c:oktanaCard isNew='{! item.isNew}' titleLabel='{! item.titleLabel}' title='{! item.title}'
-                    dropableBody='{! item.dropableBody}' isDeletable='{! item.isDeletable}' />
-
-            </aura:iteration>
+            <p class="title">You have {! v.title}</p>
+            <div class="cardContainer">
+                <aura:if isTrue="{!v.viewAll}">
+                    <aura:iteration items="{!v.items}" var="item">
+                        <c:oktanaCard isNew='{! item.isNew}' titleLabel='{! item.titleLabel}' title='{! item.title}'
+                            dropableBody='{! item.dropableBody}' isDeletable='{! item.isDeletable}' />
+                    </aura:iteration>
+                    <aura:set attribute="else">
+                        <aura:iteration items="{!v.items}" var="item" indexVar="index">
+                            <aura:if isTrue="{! !greaterthan(index,2)}">
+                                <c:oktanaCard isNew='{! item.isNew}' titleLabel='{! item.titleLabel}'
+                                    title='{! item.title}' dropableBody='{! item.dropableBody}'
+                                    isDeletable='{! item.isDeletable}' />
+                            </aura:if>
+                        </aura:iteration>
+                    </aura:set>
+                </aura:if>
+            </div>
         </lightning:layoutItem>
     </lightning:layout>
 

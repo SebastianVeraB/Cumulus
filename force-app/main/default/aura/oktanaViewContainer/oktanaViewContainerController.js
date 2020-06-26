@@ -6,9 +6,15 @@
     },
 
     handleViewAll: function (component, event, helper) {
-        
-        var viewAll = event.getParam("viewAll");
-        component.set('v.viewAll', viewAll);
+
+        var key = event.getParam("key");
+        if (key == 'viewAll') {
+            var viewAll = event.getParam("viewAll");
+            component.set('v.viewAll', viewAll);
+
+
+            console.log(viewAll);
+        }
 
         helper.handleViewAll(component);
     }
