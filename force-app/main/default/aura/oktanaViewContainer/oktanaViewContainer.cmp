@@ -27,7 +27,7 @@
                             'title': '100056794', 
                             'titleLabel': 'Notification Number',
                             'dropableBody': 'PM . Pump water leak . T-100-1. Normal . 05.06.2020',
-                            'isDeletable': 'false'
+                            'isDeletable': 'true'
                         },
                         {
                             'isNew': 'false',
@@ -38,7 +38,7 @@
                         }]" access="global" />
     <aura:attribute name="itemsList2" type="List" default="[{
                             'isNew': 'false',
-                            'title': '100056799', 
+                            'title': '100056798', 
                             'titleLabel': 'Notification Number',
                             'dropableBody': 'PM . Pump water leak . T-100-1. Normal . 05.06.2020',
                             'isDeletable': 'false'
@@ -67,8 +67,8 @@
     <!-- BODY -->
     <lightning:layout>
         <lightning:layoutItem padding="horizontal-small">
-            <c:oktanaCardContainer title="{! v.itemsList1.length + ' ' + v.title1}" items="{! v.itemsToShow1}" />
-            <c:oktanaCardContainer title="{! v.itemsList2.length + ' ' + v.title2}" items="{! v.itemsToShow2}" />
+            <c:oktanaCardContainer viewAll='{! v.viewAll}' title="{! v.itemsList1.length + ' ' + v.title1}" items="{! v.itemsToShow1}" />
+            <c:oktanaCardContainer viewAll='{! v.viewAll}' title="{! v.itemsList2.length + ' ' + v.title2}" items="{! v.itemsToShow2}" />
             <c:oktanaViewAll title="{! v.viewMoreLess}" viewingAll='{! v.viewAll}'/>
         </lightning:layoutItem>
     </lightning:layout>

@@ -6,8 +6,8 @@
         var viewMoreLess = 'View less';
 
         if (!component.get('v.viewAll')) {
-            itemsToShow1 = itemsToShow1.slice(0, 3);
-            itemsToShow2 = itemsToShow2.slice(0, 3);
+            //itemsToShow1 = itemsToShow1.slice(0, 3);
+            //itemsToShow2 = itemsToShow2.slice(0, 3);
 
             viewMoreLess = component.get('v.viewAllTitle');
         }

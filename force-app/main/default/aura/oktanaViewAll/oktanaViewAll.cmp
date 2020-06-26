@@ -10,7 +10,7 @@
     <!-- BODY -->
     <lightning:layout horizontalAlign="center" verticalAlign="start" multipleRows="false" pullToBoundary="small">
         <lightning:layoutItem>
-            <button class="slds-button slds-button_neutral" onclick='{! c.handleViewAll}'>{! v.title}</button>
+            <button class="slds-button slds-button_neutral fadeIn" onclick='{! c.handleViewAll}'>{! v.title}</button>
         </lightning:layoutItem>
     </lightning:layout>
 
