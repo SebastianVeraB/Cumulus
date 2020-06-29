@@ -1,0 +1,82 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="NotificationListCustomController" access="global">
+    
+    <!-- Attributes -->
+    <!-- <aura:attribute name="recordId" type="String" description="Attribute for the current record Id"/> -->
+    <aura:attribute name="ItemsRelated" type="List" default="[]"/>
+    <aura:attribute name="SubOrdersRelated" type="List" default="[]"/>
+    <aura:attribute name="FilesRelated" type="List" default="[]"/>
+    
+    <aura:attribute
+                    name="pageState"
+                    type="String"
+                    default="fatherBody"
+                    description="variable for representing the only 4 states that the page can be in: 'fatherBody','showItems', 'showSubOrders', 'showFiles'
+                                 'fatherBody' represents the initial state and the 3 other states ('showItems', 'showSubOrders', 'showFiles') indicate that the user clicked the respective related list"/>
+    
+    <!-- Handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    <!-- Aura body Section -->
+    
+    
+    <aura:if isTrue="{!v.pageState == 'showItems'}">
+        <!-- showitems clicked -->
+        showitems clicked
+        <c:THOR_RelatedObjectDisplayer relatedObjects="{! v.ItemsRelated }"/>
+        
+    <aura:set attribute="else">    
+     <aura:if isTrue="{!v.pageState == 'showSubOrders'}">
+        <!-- showSubOrders clicked -->
+        sub orders clicked
+         <c:THOR_RelatedObjectDisplayer relatedObjects="{! v.SubOrdersRelated }"/>
+                
+     <aura:set attribute="else">
+     <aura:if isTrue="{!v.pageState == 'showFiles'}">
+         <!-- showFiles clicked -->
+         showFiles clicked
+         <c:THOR_RelatedObjectDisplayer relatedObjects="{! v.FilesRelated }"/>
+     <aura:set attribute="else">
+		<!-- Default state: nothing clicked.  -->             
+         
+         <div class="c-container slds-p-around_medium">
+             <lightning:layout multipleRows="true">
+                 
+                 <lightning:layoutItem size="12" padding="around-small">
+                     <a href="javascript:void(0);" class="slds-text-link_faux">
+                         <div class="slds-box slds-theme_default" onclick="{!c.showRelatedItem }" id="Items">
+                             Items ({! v.ItemsRelated.length})
+                         </div>
+                     </a>
+                 </lightning:layoutItem>
+                 
+                 <lightning:layoutItem size="12" padding="around-small">
+                     <a href="javascript:void(0);" class="slds-text-link_faux">
+                         <div class="slds-box slds-theme_default" onclick="{!c.showRelatedItem }" id="SubOrders">
+                             Sub Order ({! v.SubOrdersRelated.length})
+                         </div>
+                     </a>
+                 </lightning:layoutItem>
+                 
+                 <lightning:layoutItem size="12" padding="around-small">
+                     <a href="javascript:void(0);" class="slds-text-link_faux">
+                         <div class="slds-box slds-theme_default" onclick="{!c.showRelatedItem }" id="Files">
+                             Files ({! v.FilesRelated.length})
+                         </div>
+                     </a>
+                 </lightning:layoutItem>
+                 
+             </lightning:layout>
+         </div>
+                            
+                            
+      </aura:set>
+     </aura:if> 
+     </aura:set>
+     </aura:if> 
+     </aura:set>
+     </aura:if> 
+
+    <!-- /Aura body Section -->
+    
+</aura:component>
