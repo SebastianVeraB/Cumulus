@@ -1,7 +1,8 @@
 ({
 
     doInit: function (component, event, helper) {
-
+        console.log('items 1');
+        console.log(component.get("v.itemsList1"));
         helper.handleViewAll(component);
         helper.getNotifications(component);
     },

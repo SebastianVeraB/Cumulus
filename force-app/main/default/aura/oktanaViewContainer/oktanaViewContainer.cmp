@@ -1,48 +1,234 @@
 <aura:component controller="THOR_NotificationsRetrieverController">
 
     <!-- ATTRIBUTES -->
-    <aura:attribute name="itemsList1" type="List" default="[{
-        'isNew': 'false',
-        'title': '100056798', 
-        'titleLabel': 'Notification Number',
-        'dropableBody': 'PM . Pump water leak . T-100-1. Normal . 05.06.2020',
-        'isDeletable': 'false'
+    <aura:attribute name="itemsList1" type="List" default='[
+    {
+       "isNew":"false",
+       "title":"100056798",
+       "titleLabel":"Notification Number",
+       "dropableBody":[
+          {
+             "label":"type",
+             "value":"PM"
+          },
+          {
+             "label":"description",
+             "value":"Pump water leak"
+          },
+          {
+             "label":"FL",
+             "value":"T-100-1"
+          },
+          {
+             "label":"Priority",
+             "value":"Normal"
+          },
+          {
+             "label":"Requested Date",
+             "value":"05.06.2020"
+          }
+       ],
+       "isDeletable":"false"
     },
     {
-        'isNew': 'false',
-        'title': '100056799', 
-        'titleLabel': 'Notification Number',
-        'dropableBody': 'PM . Pump water leak . T-100-1. Normal . 05.06.2020',
-        'isDeletable': 'true'
+        "isNew":"false",
+        "title":"100056798",
+        "titleLabel":"Notification Number",
+        "dropableBody":[
+           {
+              "label":"type",
+              "value":"PM"
+           },
+           {
+              "label":"description",
+              "value":"Pump water leak"
+           },
+           {
+              "label":"FL",
+              "value":"T-100-1"
+           },
+           {
+              "label":"Priority",
+              "value":"Normal"
+           },
+           {
+              "label":"Requested Date",
+              "value":"05.06.2020"
+           }
+        ],
+        "isDeletable":"false"
+     },
+     {
+        "isNew":"false",
+        "title":"100056798",
+        "titleLabel":"Notification Number",
+        "dropableBody":[
+           {
+              "label":"type",
+              "value":"PM"
+           },
+           {
+              "label":"description",
+              "value":"Pump water leak"
+           },
+           {
+              "label":"FL",
+              "value":"T-100-1"
+           },
+           {
+              "label":"Priority",
+              "value":"Normal"
+           },
+           {
+              "label":"Requested Date",
+              "value":"05.06.2020"
+           }
+        ],
+        "isDeletable":"false"
+     },
+    {
+       "isNew":"false",
+       "title":"100056799",
+       "titleLabel":"Notification Number",
+       "dropableBody":[
+          {
+             "label":"type",
+             "value":"PM"
+          },
+          {
+             "label":"description",
+             "value":"Pump water leak"
+          },
+          {
+             "label":"FL",
+             "value":"T-100-1"
+          },
+          {
+             "label":"Priority",
+             "value":"Normal"
+          },
+          {
+             "label":"Requested Date",
+             "value":"05.06.2020"
+          }
+       ],
+       "isDeletable":"true"
+    }
+ ]' access="global" />
+    <aura:attribute name="itemsList2" type="List" default='[
+    {
+       "isNew":"false",
+       "title":"100056798",
+       "titleLabel":"Notification Number",
+       "dropableBody":[
+          {
+             "label":"type",
+             "value":"PM"
+          },
+          {
+             "label":"description",
+             "value":"Pump water leak"
+          },
+          {
+             "label":"FL",
+             "value":"T-100-1"
+          },
+          {
+             "label":"Priority",
+             "value":"Normal"
+          },
+          {
+             "label":"Requested Date",
+             "value":"05.06.2020"
+          }
+       ],
+       "isDeletable":"false"
     },
     {
-        'isNew': 'false',
-        'title': '100056799', 
-        'titleLabel': 'Notification Number',
-        'dropableBody': 'PM . Pump water leak . T-100-1. Normal . 05.06.2020',
-        'isDeletable': 'true'
-    },
+        "isNew":"false",
+        "title":"100056798",
+        "titleLabel":"Notification Number",
+        "dropableBody":[
+           {
+              "label":"type",
+              "value":"PM"
+           },
+           {
+              "label":"description",
+              "value":"Pump water leak"
+           },
+           {
+              "label":"FL",
+              "value":"T-100-1"
+           },
+           {
+              "label":"Priority",
+              "value":"Normal"
+           },
+           {
+              "label":"Requested Date",
+              "value":"05.06.2020"
+           }
+        ],
+        "isDeletable":"false"
+     },
+     {
+        "isNew":"false",
+        "title":"100056798",
+        "titleLabel":"Notification Number",
+        "dropableBody":[
+           {
+              "label":"type",
+              "value":"PM"
+           },
+           {
+              "label":"description",
+              "value":"Pump water leak"
+           },
+           {
+              "label":"FL",
+              "value":"T-100-1"
+           },
+           {
+              "label":"Priority",
+              "value":"Normal"
+           },
+           {
+              "label":"Requested Date",
+              "value":"05.06.2020"
+           }
+        ],
+        "isDeletable":"false"
+     },
     {
-        'isNew': 'false',
-        'title': '100056799', 
-        'titleLabel': 'Notification Number',
-        'dropableBody': 'PM . Pump water leak . T-100-1. Normal . 05.06.2020',
-        'isDeletable': 'true'
-    }]" access="global" />
-    <aura:attribute name="itemsList2" type="List" default="[{
-                            'isNew': 'false',
-                            'title': '100056798', 
-                            'titleLabel': 'Notification Number',
-                            'dropableBody': 'PM . Pump water leak . T-100-1. Normal . 05.06.2020',
-                            'isDeletable': 'false'
-                        },
-                        {
-                            'isNew': 'false',
-                            'title': '100056799', 
-                            'titleLabel': 'Notification Number',
-                            'dropableBody': 'PM . Pump water leak . T-100-1. Normal . 05.06.2020',
-                            'isDeletable': 'true'
-                        }]" access="global" />
+       "isNew":"false",
+       "title":"100056799",
+       "titleLabel":"Notification Number",
+       "dropableBody":[
+          {
+             "label":"type",
+             "value":"PM"
+          },
+          {
+             "label":"description",
+             "value":"Pump water leak"
+          },
+          {
+             "label":"FL",
+             "value":"T-100-1"
+          },
+          {
+             "label":"Priority",
+             "value":"Normal"
+          },
+          {
+             "label":"Requested Date",
+             "value":"05.06.2020"
+          }
+       ],
+       "isDeletable":"true"
+    }
+ ]' access="global" />
 
     <aura:attribute name="title1" type="String" default="New Notifications" access="global" />
     <aura:attribute name="title2" type="String" default="Excecution Notifications" access="global" />
@@ -56,17 +242,15 @@
     <aura:handler name="viewAllEvent" event="c:ViewAllEvent" action="{!c.handleViewAll}" />
 
     <!-- BODY -->
-    <div class="seba">
-        
-            <lightning:layout>
-                <lightning:layoutItem padding="horizontal-small">
-                    <c:oktanaCardContainer viewAll='{! v.viewAll}' title="{! v.itemsList1.length + ' ' + v.title1}"
-                        items="{! v.itemsList1}" />
-                    <c:oktanaCardContainer viewAll='{! v.viewAll}' title="{! v.itemsList2.length + ' ' + v.title2}"
-                        items="{! v.itemsList1}" />
-                    <c:oktanaViewAll title="{! v.viewMoreLess}" viewingAll='{! v.viewAll}' />
-                </lightning:layoutItem>
-            </lightning:layout>
-        
-    </div>
+    <ui:scrollerWrapper class="scrollerSize">
+        <lightning:layout>
+            <lightning:layoutItem padding="horizontal-small">
+                <c:oktanaCardContainer viewAll='{! v.viewAll}' title="{! v.itemsList1.length + ' ' + v.title1}"
+                    items="{! v.itemsList1}" />
+                <c:oktanaCardContainer viewAll='{! v.viewAll}' title="{! v.itemsList2.length + ' ' + v.title2}"
+                    items="{! v.itemsList1}" />
+                <c:oktanaViewAll title="{! v.viewMoreLess}" viewingAll='{! v.viewAll}' />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </ui:scrollerWrapper>
 </aura:component>
