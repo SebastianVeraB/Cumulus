@@ -12,7 +12,7 @@
   <aura:attribute name="titleLabel" type="String" default="" access="global"/>
   <aura:attribute name="titleSize" type="String" default="2" access="global"/>
 
-  <aura:attribute name="dropableBody" type="String" default="" access="global"/> 
+  <aura:attribute name="dropableBody" type="List" default="" access="global"/> 
   <aura:attribute name="actions" type="Aura.Component[]" default="" access="global"/> 
 <!--Interface-->
 
@@ -182,13 +182,21 @@
 
  <!--######### HIDDEN BODY #########-->
       <div aura:id="hideDiv" class="preventOverflowY">
-        <div aura:id="showSection" style="border-color: rgb(228, 228, 228); transition: margin-top 0.5s ease;"
+        <div aura:id="showSection" style="border-color: rgb(228, 228, 228); transition: margin-top 0.5s cubic-bezier(0.43, -0.17, 0.35, 0.37);"
           class="{! v.isOpen ? 'slds-box oktanaShow' : 'slds-box oktanaHide'}">
 
-          <lightning:layout verticalAlign="center">
-            <lightning:layoutItem flexibility="no-flex" padding="horizontal-small">
-              <p class="slds-welcome-mat__tile-description">{!v.dropableBody}</p>
+          <lightning:layout verticalAlign="center" multipleRows="true">
+            <aura:iteration items="{! v.dropableBody}" var="item">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+              <p class="slds-welcome-mat__tile-description">
+                {!item.label}
+              </p>
+              <h3 class="slds-welcome-mat__tile-title">
+                {!item.value}
+              </h3>
+
             </lightning:layoutItem>
+            </aura:iteration>
           </lightning:layout>
 
         </div>
