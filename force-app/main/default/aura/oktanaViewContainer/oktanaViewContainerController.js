@@ -3,6 +3,7 @@
     doInit: function (component, event, helper) {
 
         helper.handleViewAll(component);
+        helper.getNotifications(component);
     },
 
     handleViewAll: function (component, event, helper) {
@@ -11,9 +12,6 @@
         if (key == 'viewAll') {
             var viewAll = event.getParam("viewAll");
             component.set('v.viewAll', viewAll);
-
-
-            console.log(viewAll);
         }
 
         helper.handleViewAll(component);
