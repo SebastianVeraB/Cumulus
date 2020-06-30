@@ -1,2 +1,24 @@
-.THIS {
+.THIS {}
+
+.THIS.scrollerSize {
+    height: auto;
+
+    transition: none !important;
+}
+
+.THIS.seba {
+    overflow: scroll !important;
+    background-color: red;
+    transition: all 0s !important;
+    transition-duration: 0ms !important;
+}
+
+.THIS.scroller {
+    transition: all 0s !important;
+    transition-duration: 0ms !important;
+}
+
+.THIS .grande {
+    height: 700px;
+    background-color: blue;
 }
