@@ -8,7 +8,6 @@
 
 .THIS.seba {
     overflow: scroll !important;
-    /*background-color: red;*/
     transition: all 0s !important;
     transition-duration: 0ms !important;
 }

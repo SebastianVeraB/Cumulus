@@ -4,6 +4,12 @@
         <c:oktanaCard isNew='false' titleLabel='Notification Number' title='100056799'
             dropableBody="[{'label': 'type', 'value': 'PM'}, {'label': 'description', 'value': 'Pump water leak'}, {'label': 'FL', 'value': 'T-100-1'}, {'label': 'Priority', 'value': 'Normal'} , {'label': 'Requested Date', 'value': '05.06.2020'}]" isDeletable='false'>
 
+<<<<<<< HEAD
+=======
+
+        <c:oktanaCard isNew='false' titleLabel='Notification Number' title='100056799'
+            dropableBody='PM . Pump water leak . T-100-1. Normal . 05.06.2020'>
+>>>>>>> 653295e52499bc24e8740651f2a8897f2f1adaac
             <aura:set attribute='actions'>
                 <lightning:button variant="brand" label="Test" title="Test" onclick="{! c.foo }" />
             </aura:set>
